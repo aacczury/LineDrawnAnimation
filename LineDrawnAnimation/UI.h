@@ -7,6 +7,8 @@
 
 #include <cstdio>
 
+#include "canvasControl.h"
+
 
 namespace LineDrawnAnimation {
 
@@ -27,7 +29,6 @@ namespace LineDrawnAnimation {
 
 	glm::vec3 eye_position(0.01, 0.01, 20);
 	glm::vec3 look_at_position(0, 0, 0);
-	GLuint img_tex;
 
 	/// <summary>
 	/// UI 的摘要
@@ -61,16 +62,15 @@ namespace LineDrawnAnimation {
 		/// 設計工具所需的變數。
 		/// </summary>
 
+		canvasControl cc;
+
 		void init_opengl();
 		void reshape(int, int);
 		void init_texture(Bitmap ^, GLuint &);
 		void render_gl_canvas();
-		void draw_test();
-		void draw_img();
 
 		bool left_mouse_down;
 		unsigned int prev_x, prev_y;
-		Bitmap ^init_bitmap;
 		System::Void canvas_DragEnter(System::Object^  sender, System::Windows::Forms::DragEventArgs^  e);
 		System::Void canvas_DragDrop(System::Object^ sender, System::Windows::Forms::DragEventArgs^ e);
 		System::Void canvas_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);

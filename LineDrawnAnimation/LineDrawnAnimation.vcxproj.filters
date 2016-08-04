@@ -18,10 +18,10 @@
     <ClCompile Include="UI.cpp">
       <Filter>原始程式檔</Filter>
     </ClCompile>
-    <ClCompile Include="UIControl.cpp">
+    <ClCompile Include="utility.cpp">
       <Filter>原始程式檔</Filter>
     </ClCompile>
-    <ClCompile Include="utility.cpp">
+    <ClCompile Include="canvasControl.cpp">
       <Filter>原始程式檔</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,10 +29,10 @@
     <ClInclude Include="UI.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="UIControl.h">
+    <ClInclude Include="utility.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="utility.h">
+    <ClInclude Include="canvasControl.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

@@ -70,7 +70,6 @@ namespace LineDrawnAnimation {
 		glLoadIdentity();
 
 		float aspect_ratio = width * 1.0 / height;
-		//gluPerspective(45, aspect_ratio, 0.1, 100);
 		if (width <= height)
 			gluOrtho2D(-1.0, 1.0, -1.0 / aspect_ratio, 1.0 / aspect_ratio);
 		else
@@ -97,24 +96,10 @@ namespace LineDrawnAnimation {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glMatrixMode(GL_MODELVIEW);
 		glLoadIdentity();
-		//gluLookAt(eye_position.x, eye_position.y, eye_position.z,
-		//	look_at_position.x, look_at_position.y, look_at_position.z,
-		//	0, 1, 0);
 
-		draw_img();
+		cc.draw_img();
 
 		SwapBuffers(hdc);
-	}
-
-	void UI::draw_img(){
-		glPushMatrix();
-		glBindTexture(GL_TEXTURE_2D, img_tex);
-		glBegin(GL_POLYGON);
-		glTexCoord2d(0.0, 0.0); glVertex2d(-1.0, 1.0);
-		glTexCoord2d(1.0, 0.0);	glVertex2d(1.0, 1.0);
-		glTexCoord2d(1.0, 1.0);	glVertex2d(1.0, -1.0);
-		glTexCoord2d(0.0, 1.0);	glVertex2d(-1.0, -1.0);
-		glEnd();
 	}
 
 	// 定時更新FRAME
@@ -136,8 +121,7 @@ namespace LineDrawnAnimation {
 				for (unsigned int i = 0; i < files->Length; ++i){
 					System::String ^ext = System::IO::Path::GetExtension(files[i]);
 					if (imgExt->IndexOf(ext) >= 0){
-						init_bitmap = gcnew Bitmap(files[i]);
-						init_texture(init_bitmap, img_tex);
+						cc.read_img(files[i]);
 					}
 				}
 			}

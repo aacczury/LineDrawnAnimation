@@ -135,15 +135,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="canvasControl.cpp" />
     <ClCompile Include="UI.cpp" />
-    <ClCompile Include="UIControl.cpp" />
     <ClCompile Include="utility.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="canvasControl.h" />
     <ClInclude Include="UI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="UIControl.h" />
     <ClInclude Include="utility.h" />
   </ItemGroup>
   <ItemGroup>
